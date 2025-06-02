@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Introduction section
     const introSection = document.getElementById('introduction');
     const introParagraph = introSection.querySelector('p');
-    introParagraph.textContent = 'Google Jules is an AI-powered software engineering assistant developed by Google. It helps developers by understanding codebases, generating plans, and making changes to the code.';
+    introParagraph.textContent = 'Google Jules is an AI-powered software engineering assistant and coding agent tool developed by Google. It helps developers by understanding codebases, generating plans, and making changes to the code.';
 
     // How it works section
     const howItWorksSection = document.getElementById('how-it-works');
@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li>Creating and running unit tests.</li>
             <li>Interacting with users to clarify requirements and get approvals.</li>
             <li>Using tools to perform actions like listing files and reading their content.</li>
+            <li>Publishing its work to GitHub repositories.</li>
         </ul>
     `;
 
