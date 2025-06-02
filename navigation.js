@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const pages = [
         { name: "Home", href: "index.html" },
         { name: "About Jules", href: "product.html" },
-        { name: "AI Coding Dangers", href: "dangers-of-ai-coding.html" }
+        { name: "AI Coding Dangers", href: "dangers-of-ai-coding.html" },
+        { name: "AI's Impact", href: "ai-impact-programmers.html" }
     ];
 
     // Populate the navigation menu
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle menu visibility
     navToggle.addEventListener('click', function() {
         navMenu.classList.toggle('nav-menu-visible');
-
+        
         // Optional: Change button text/icon (e.g., to 'X')
         if (navMenu.classList.contains('nav-menu-visible')) {
             navToggle.innerHTML = '&times;'; // 'X' symbol

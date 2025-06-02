@@ -92,7 +92,7 @@ body.product-page-body { /* We'll need to add this class to body in product.html
     margin-bottom: 15px;
 }
 
-#product-description-page p,
+#product-description-page p, 
 #product-description-page div,
 #product-description-page ul,
 #product-description-page li {
@@ -439,3 +439,78 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
+
+/* CSS for AI Impact on Programmers Page */
+
+#ai-impact-page section {
+    /* General glassmorphism styles will be inherited from #dangers-page section if applicable,
+       or from #product-description-page section if selectors were more generic.
+       Let's assume #dangers-page section styles are the most recent generic glassmorphism for sections.
+       If not, we might need to duplicate or create a common class.
+       For now, let's assume the styles applied to '#dangers-page section'
+       (background, border-radius, padding, box-shadow, backdrop-filter, opacity, transform)
+       are desired here too. If they are not generic enough (i.e. not just 'section'),
+       we'll need to explicitly copy them or use a common class.
+
+       The current rule for '#dangers-page section' will apply the glass effect.
+       We just need to ensure the main page ID doesn't conflict.
+       The sections on this page are: #ai-impact-intro, #ai-impact-positive, #ai-impact-negative, #ai-impact-conclusion.
+       These will inherit from the `#dangers-page section` rule as they are `section` tags.
+       This should be fine.
+    */
+}
+
+#ai-impact-page h2 {
+    /* Section titles, should be consistent with other pages */
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#ai-impact-page .impact-list-container .impact-item {
+    margin-bottom: 25px; /* Space between each main impact point */
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.05); /* Subtle background for each item within the section */
+    border-radius: 8px;
+}
+
+#ai-impact-page .impact-list-container .impact-item h3 {
+    font-size: 1.25em;
+    color: #e8e8e8; /* Slightly brighter for these subheadings */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#ai-impact-page .impact-list-container .impact-item ul {
+    list-style-type: disc; /* Standard bullets */
+    padding-left: 25px; /* Indent bullet points */
+    margin: 0;
+}
+
+#ai-impact-page .impact-list-container .impact-item li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #dcdcdc;
+    margin-bottom: 8px; /* Space between bullet points */
+}
+
+/* Styling for intro and conclusion paragraphs */
+#ai-impact-page #ai-impact-intro p,
+#ai-impact-page #ai-impact-conclusion p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #eee;
+}
+
+/* Optional: Add a little visual distinction for positive/negative sections if desired
+   This can be done with ::before pseudo-elements on the h2 or background tints.
+   For now, relying on titles. Example:
+#ai-impact-positive h2::before {
+    content: '👍 ';
+}
+#ai-impact-negative h2::before {
+    content: '👎 ';
+}
+*/

@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const howItWorksP = document.querySelector('#jules-how-it-works p');
     if (howItWorksP) howItWorksP.innerHTML = julesData.howItWorks;
-
+    
     const statusAccessP = document.querySelector('#jules-status-access p');
     if (statusAccessP) statusAccessP.innerHTML = julesData.statusAccess;
 
