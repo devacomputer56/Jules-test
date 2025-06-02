@@ -297,9 +297,17 @@ footer {
 }
 
 #dangers-page section {
-    /* General styling for sections on this page will be inherited from existing rules,
-       including glassmorphism, margins, padding, and animations.
-       We can add overrides if necessary. */
+    margin-bottom: 2rem; /* Copied from #product-description-page section */
+    background: rgba(255, 255, 255, 0.2); /* Copied */
+    border-radius: 15px; /* Copied */
+    padding: 20px; /* Copied */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Copied */
+    backdrop-filter: blur(10px); /* Copied */
+    -webkit-backdrop-filter: blur(10px); /* Copied */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Copied */
+    opacity: 1; /* Ensure visibility */
+    transform: none; /* Ensure no transform */
+    /* If animations are desired later, they can be added here */
 }
 
 #dangers-page h2 {
