@@ -167,3 +167,124 @@ footer {
     position: relative; /* Changed from fixed to allow scrolling */
     margin-top: 2rem;
 }
+
+/* Accordion Styles */
+.accordion-item {
+    background: rgba(255, 255, 255, 0.1); /* Slightly different background for item */
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accordion-title {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    outline: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-title:hover, .accordion-title.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.accordion-title::after {
+    content: '+'; /* Plus sign for collapsed state */
+    font-size: 1.5em;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.accordion-title.active::after {
+    content: '−'; /* Minus sign for expanded state */
+}
+
+.accordion-content {
+    padding: 0 15px; /* Initial padding, will be set to 0 when hidden */
+    background-color: rgba(255, 255, 255, 0.05);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+.accordion-content p, .accordion-content ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #eee; /* Ensure text color is readable */
+}
+
+/* CSS Adjustments for Visual Hierarchy and Spacing (Accordions Update) */
+
+#product-description-page section {
+    padding: 25px; /* Slightly increase padding for main sections */
+    margin-bottom: 2.5rem; /* Increase bottom margin for better separation */
+}
+
+.accordion-item {
+    margin-bottom: 15px; /* Increase space between accordion items */
+    background: rgba(255, 255, 255, 0.15); /* Slightly enhance item background visibility */
+}
+
+.accordion-title {
+    padding: 18px 20px; /* Increase padding for accordion titles for a larger click target */
+    font-size: 1.15em; /* Slightly larger font for titles */
+}
+
+.accordion-title strong { /* Ensure strong tags in title are appropriately styled if needed */
+    font-weight: 600; /* Default is bold, but can be more specific */
+}
+
+.accordion-title::after {
+    font-size: 1.6em; /* Make +/- indicator slightly larger */
+    margin-left: 10px; /* Add some space to the indicator */
+}
+
+.accordion-content {
+    /* Padding is now handled by JS during expand/collapse for smoother animation */
+    /* Ensure text within content is well-spaced */
+    line-height: 1.7; /* Improve readability of text within accordion content */
+}
+
+.accordion-content ul {
+    padding-left: 20px; /* Indent lists within accordion content */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.accordion-content li {
+    margin-bottom: 0.6rem; /* Adjust spacing for list items */
+}
+
+.accordion-content p {
+    margin-top: 0;
+    margin-bottom: 1rem; /* Ensure paragraphs have good spacing */
+}
+
+/* General text refinement in product page for better readability */
+#product-description-page p,
+#product-description-page div, /* This might be too broad, but targets general text containers */
+#product-description-page ul,
+#product-description-page li {
+    font-size: 0.95rem; /* Slightly smaller base font for content if it was too large */
+    color: #e0e0e0; /* Ensure text color is light enough but readable */
+}
+
+#product-description-page h2 {
+    font-size: 1.8em; /* Adjust main section heading size if needed */
+    margin-bottom: 20px; /* Space below section titles */
+}
+
+/* Ensure the glassmorphism still looks good */
+/* No direct changes to backdrop-filter or core glass properties unless issues are found */
+/* The current accordion-item background is slightly more opaque which should be fine */
