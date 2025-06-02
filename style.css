@@ -356,3 +356,86 @@ footer {
     line-height: 1.7;
     color: #eee;
 }
+
+/* Navigation Menu Styles */
+
+/* Adjusting header for flex layout with nav button */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem; /* Adjusted padding */
+    position: relative; /* For positioning nav-menu */
+    /* text-align: center; */ /* Overridden by flex */
+}
+
+header h1 {
+    margin: 0; /* Ensure h1 margin doesn't interfere */
+    flex-grow: 1; /* Allow h1 to take space */
+    text-align: center; /* Center the h1 text within its flex item space */
+    /* Potentially add margin to h1 if button and title are too close or too far */
+    /* margin-left: -[button_width_plus_padding]; to re-center if button takes space */
+}
+
+.nav-button {
+    font-size: 1.8em; /* Larger hamburger icon */
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    order: -1; /* Place button before h1 in visual order if needed, or adjust HTML structure */
+    /* If HTML is button, h1, then button needs no order override if h1 is flex-grow 1 */
+    /* The subtask put button first, then h1, so this order is fine. */
+    z-index: 1100; /* Ensure button is above menu if menu is full width */
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    right: 0; /* Align to the right of the header */
+    width: 250px; /* Or min-width, or adjust as needed */
+    background: rgba(50, 50, 50, 0.7); /* Darker glassmorphic background */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none; /* No top border as it connects to header */
+    z-index: 1000; /* Ensure menu is above page content */
+
+    /* Initial state for fade-in */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); /* Slight upward movement for fade-in */
+    transition: opacity 0.3s ease-out, visibility 0s linear 0.3s, transform 0.3s ease-out;
+}
+
+.nav-menu.nav-menu-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-out, visibility 0s linear 0s, transform 0.3s ease-out;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-menu a:last-child {
+    border-bottom: none;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
