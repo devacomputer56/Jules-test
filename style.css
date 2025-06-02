@@ -43,3 +43,127 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Styles for product.html - Glassmorphism and Animations */
+
+/* Add a background to the body for the glass effect to be more apparent */
+body.product-page-body { /* We'll need to add this class to body in product.html later or target body if no conflict */
+    background: linear-gradient(to right, #74ebd5, #ACB6E5); /* Example gradient */
+}
+
+#product-description-page section {
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background for the glass effect */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px); /* The actual blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Light border to enhance the glass look */
+    opacity: 0; /* Start hidden for fade-in animation */
+    transform: translateY(20px); /* Start slightly lower for fade-in animation */
+    animation: fadeInSection 0.8s ease-out forwards;
+}
+
+/* Define a keyframe animation for fade-in */
+@keyframes fadeInSection {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger the animation for sections - can be done with JS for more precision or with :nth-child if structure is fixed */
+/* For simplicity, this example applies the same delay. JS would be better for true scroll-based stagger. */
+#product-description-page section:nth-child(1) { animation-delay: 0.1s; }
+#product-description-page section:nth-child(2) { animation-delay: 0.2s; }
+#product-description-page section:nth-child(3) { animation-delay: 0.3s; }
+#product-description-page section:nth-child(4) { animation-delay: 0.4s; }
+#product-description-page section:nth-child(5) { animation-delay: 0.5s; }
+#product-description-page section:nth-child(6) { animation-delay: 0.6s; }
+#product-description-page section:nth-child(7) { animation-delay: 0.7s; }
+#product-description-page section:nth-child(8) { animation-delay: 0.8s; }
+
+
+#product-description-page h2 {
+    color: #fff; /* Adjust heading color for better contrast on glass */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#product-description-page p,
+#product-description-page div,
+#product-description-page ul,
+#product-description-page li {
+    color: #eee; /* Adjust text color for readability on glass */
+}
+
+#product-description-page ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+#product-description-page li {
+    margin-bottom: 0.5rem;
+}
+
+/* Simple hover effect for sections */
+#product-description-page section:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* Ensure the main header and footer from the original style don't clash too much or restyle them if needed */
+/* For this example, we assume they are acceptable or would be restyled in a dedicated product-style.css */
+
+/* Add a class to product.html's body tag to scope the gradient background, if we want to avoid affecting index.html's body */
+/* The subtask for product.html creation didn't add a class to body, so these styles will apply to body tag globally.
+   If index.html also uses style.css, its body background will also change.
+   A better approach would be to use a more specific selector for the product page body,
+   or use a separate CSS file for product.html.
+   For now, let's proceed with this, and can refine if it causes issues for index.html.
+*/
+
+body { /* This will apply the gradient to index.html as well. */
+    background: linear-gradient(to right, #654ea3, #eaafc8); /* New example gradient for body */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern font */
+}
+
+/* Overriding some general styles for better consistency on the product page */
+header {
+    background: rgba(0, 0, 0, 0.1); /* Make header slightly transparent */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 1.5rem 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ddd;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.1); /* Make footer slightly transparent */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #eee;
+    padding: 1.5rem 0;
+    position: relative; /* Changed from fixed to allow scrolling */
+    margin-top: 2rem;
+}
