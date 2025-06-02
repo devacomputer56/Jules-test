@@ -288,3 +288,63 @@ footer {
 /* Ensure the glassmorphism still looks good */
 /* No direct changes to backdrop-filter or core glass properties unless issues are found */
 /* The current accordion-item background is slightly more opaque which should be fine */
+
+/* CSS for Dangers of AI Coding Page */
+
+#dangers-page {
+    /* Main container for the dangers page, can inherit general main styles */
+    /* or add specific padding if needed */
+}
+
+#dangers-page section {
+    /* General styling for sections on this page will be inherited from existing rules,
+       including glassmorphism, margins, padding, and animations.
+       We can add overrides if necessary. */
+}
+
+#dangers-page h2 {
+    /* Section titles, should inherit general h2 styling.
+       Ensure color and bottom-border are consistent. */
+    color: #fff; /* As per product page */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* As per product page */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#ai-dangers-list .danger-item {
+    background: rgba(255, 255, 255, 0.1); /* Slightly more distinct background than accordion items */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between each danger item */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow than main sections */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ai-dangers-list .danger-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#ai-dangers-list .danger-item h3 {
+    font-size: 1.3em;
+    color: #f0f0f0; /* Lighter color for sub-heading */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#ai-dangers-list .danger-item p {
+    font-size: 0.95rem; /* Consistent with product page content */
+    line-height: 1.7;
+    color: #dcdcdc; /* Slightly different shade for content if needed */
+    margin-bottom: 0; /* Remove bottom margin if it's the last element */
+}
+
+/* Ensure general text and paragraph styling within sections is consistent */
+#dangers-page #ai-dangers-intro p,
+#dangers-page #ai-dangers-conclusion p {
+    font-size: 1rem; /* Main intro/conclusion text slightly larger */
+    line-height: 1.7;
+    color: #eee;
+}
